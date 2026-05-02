@@ -8,10 +8,13 @@ import lombok.Setter;
 
 // JPA
 @Entity
-@DiscriminatorValue("customer")
+@DiscriminatorValue("CUSTOMER")
 // Lombok
 @NoArgsConstructor
 @Getter
 @Setter
 public class Customer extends User {
+    public String getType() {
+        return "CUSTOMER";
+    }
 }
