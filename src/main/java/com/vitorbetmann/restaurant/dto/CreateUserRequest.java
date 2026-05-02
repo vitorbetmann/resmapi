@@ -1,10 +1,13 @@
 package com.vitorbetmann.restaurant.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 public record CreateUserRequest(
-        String name,
-        String email,
-        String login,
-        String password,
-        String address,
-        String type) {
+        @NotBlank String name,
+        @NotBlank @Email String email,
+        @NotBlank String login,
+        @NotBlank String password,
+        @NotBlank String address,
+        @NotBlank String type) {
 }

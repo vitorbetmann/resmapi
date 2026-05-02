@@ -1,7 +1,9 @@
 package com.vitorbetmann.restaurant.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public record ValidateLoginRequest(
-        String login,
-        String password
+        @NotBlank String login,
+        @NotBlank String password
 ) {
 }

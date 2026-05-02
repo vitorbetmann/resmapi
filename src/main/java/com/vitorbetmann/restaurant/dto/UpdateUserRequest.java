@@ -1,8 +1,11 @@
 package com.vitorbetmann.restaurant.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 public record UpdateUserRequest(
-        String name,
-        String email,
-        String login,
-        String address) {
+        @NotBlank String name,
+        @NotBlank @Email String email,
+        @NotBlank String login,
+        @NotBlank String address) {
 }

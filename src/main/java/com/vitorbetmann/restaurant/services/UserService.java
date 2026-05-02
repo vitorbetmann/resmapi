@@ -84,7 +84,7 @@ public class UserService {
     }
 
     @Transactional
-    public UserResponse changeUserPassword(Long id, ChangeUserPasswordRequest request) {
+    public UserResponse changePassword(Long id, ChangePasswordRequest request) {
         User user = this.userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id.toString()));
 
