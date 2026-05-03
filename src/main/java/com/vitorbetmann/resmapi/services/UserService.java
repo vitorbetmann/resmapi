@@ -1,14 +1,14 @@
-package com.vitorbetmann.restaurant.services;
+package com.vitorbetmann.resmapi.services;
 
-import com.vitorbetmann.restaurant.dto.*;
-import com.vitorbetmann.restaurant.entities.Customer;
-import com.vitorbetmann.restaurant.entities.Owner;
-import com.vitorbetmann.restaurant.entities.User;
-import com.vitorbetmann.restaurant.exceptions.EmailAlreadyInUseException;
-import com.vitorbetmann.restaurant.exceptions.InvalidPasswordException;
-import com.vitorbetmann.restaurant.exceptions.InvalidUserTypeException;
-import com.vitorbetmann.restaurant.exceptions.UserNotFoundException;
-import com.vitorbetmann.restaurant.repositories.UserRepository;
+import com.vitorbetmann.resmapi.dto.*;
+import com.vitorbetmann.resmapi.entities.Customer;
+import com.vitorbetmann.resmapi.entities.Owner;
+import com.vitorbetmann.resmapi.entities.User;
+import com.vitorbetmann.resmapi.exceptions.EmailAlreadyInUseException;
+import com.vitorbetmann.resmapi.exceptions.InvalidPasswordException;
+import com.vitorbetmann.resmapi.exceptions.InvalidUserTypeException;
+import com.vitorbetmann.resmapi.exceptions.UserNotFoundException;
+import com.vitorbetmann.resmapi.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

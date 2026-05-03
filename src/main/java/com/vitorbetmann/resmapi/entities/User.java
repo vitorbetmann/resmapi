@@ -1,4 +1,4 @@
-package com.vitorbetmann.restaurant.entities;
+package com.vitorbetmann.resmapi.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

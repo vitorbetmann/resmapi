@@ -1,6 +1,6 @@
-package com.vitorbetmann.restaurant.repositories;
+package com.vitorbetmann.resmapi.repositories;
 
-import com.vitorbetmann.restaurant.entities.User;
+import com.vitorbetmann.resmapi.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.vitorbetmann.restaurant.controller;
+package com.vitorbetmann.resmapi.controller;
 
-import com.vitorbetmann.restaurant.dto.*;
-import com.vitorbetmann.restaurant.services.UserService;
+import com.vitorbetmann.resmapi.dto.*;
+import com.vitorbetmann.resmapi.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.vitorbetmann.restaurant.exceptions;
+package com.vitorbetmann.resmapi.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;

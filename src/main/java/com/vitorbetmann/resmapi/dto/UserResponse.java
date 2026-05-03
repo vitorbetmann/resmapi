@@ -1,4 +1,4 @@
-package com.vitorbetmann.restaurant.dto;
+package com.vitorbetmann.resmapi.dto;
 
 import java.time.LocalDateTime;
 
