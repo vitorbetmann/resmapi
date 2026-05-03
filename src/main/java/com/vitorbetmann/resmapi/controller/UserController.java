@@ -22,10 +22,12 @@ public class UserController {
     }
 
     @Operation(
-            summary = "Creates a new user.",
-            description = "Creates a new user with a unique EMAIL and ID fields.",
+            summary = "Registers a new user.",
+            description = "Registers a new user (OWNER or CUSTOMER). The email must be unique across all users.",
             responses = {
-                    @ApiResponse(description = "CREATED", responseCode = "201")
+                    @ApiResponse(description = "CREATED", responseCode = "201"),
+                    @ApiResponse(description = "BAD REQUEST — invalid user type or validation error", responseCode = "400"),
+                    @ApiResponse(description = "CONFLICT — email already in use", responseCode = "409")
             }
     )
     @PostMapping
@@ -34,10 +36,12 @@ public class UserController {
     }
 
     @Operation(
-            summary = "Updates a user's information. Excludes password.",
-            description = "Updates at least one of the following fields of a user with a given ID: NAME, EMAIL, LOGIN, ADDRESS.",
+            summary = "Updates user data (excluding password).",
+            description = "Replaces the NAME, EMAIL, LOGIN, and ADDRESS of the user with the given ID. All four fields are required. Password changes go through the dedicated /{id}/password endpoint.",
             responses = {
-                    @ApiResponse(description = "OK", responseCode = "200")
+                    @ApiResponse(description = "OK", responseCode = "200"),
+                    @ApiResponse(description = "NOT FOUND — user does not exist", responseCode = "404"),
+                    @ApiResponse(description = "CONFLICT — email already in use by another user", responseCode = "409")
             }
     )
     @PutMapping("/{id}")
@@ -46,10 +50,12 @@ public class UserController {
     }
 
     @Operation(
-            summary = "Updates a user's password.",
-            description = "Updates the password field of a user with a given ID.",
+            summary = "Changes a user's password.",
+            description = "Updates the password of the user with the given ID. Requires the current password for verification.",
             responses = {
-                    @ApiResponse(description = "OK", responseCode = "200")
+                    @ApiResponse(description = "OK", responseCode = "200"),
+                    @ApiResponse(description = "UNAUTHORIZED — current password is invalid", responseCode = "401"),
+                    @ApiResponse(description = "NOT FOUND — user does not exist", responseCode = "404")
             }
     )
     @PatchMapping("/{id}/password")
@@ -61,7 +67,8 @@ public class UserController {
             summary = "Deletes a user.",
             description = "Deletes the user with a given ID.",
             responses = {
-                    @ApiResponse(description = "NO CONTENT", responseCode = "204")
+                    @ApiResponse(description = "NO CONTENT", responseCode = "204"),
+                    @ApiResponse(description = "NOT FOUND — user does not exist", responseCode = "404")
             }
     )
     @DeleteMapping("/{id}")
@@ -72,7 +79,7 @@ public class UserController {
 
     @Operation(
             summary = "Finds users by name.",
-            description = "Returns a list with all users with a given NAME.",
+            description = "Returns all users whose name contains the given value (partial, case-sensitive match).",
             responses = {
                     @ApiResponse(description = "OK", responseCode = "200")
             }
@@ -84,8 +91,11 @@ public class UserController {
 
     @Operation(
             summary = "Validates a user's login attempt.",
+            description = "Validates the provided login and password against the stored credentials. Returns 200 if valid.",
             responses = {
-                    @ApiResponse(description = "OK", responseCode = "200")
+                    @ApiResponse(description = "OK", responseCode = "200"),
+                    @ApiResponse(description = "UNAUTHORIZED — password is invalid", responseCode = "401"),
+                    @ApiResponse(description = "NOT FOUND — login does not exist", responseCode = "404")
             }
     )
     @PostMapping("/login")

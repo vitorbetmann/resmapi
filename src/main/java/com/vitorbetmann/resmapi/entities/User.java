@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 
 // JPA
 @Entity
+@Table(name = "users")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
 @EntityListeners(value = AuditingEntityListener.class)
