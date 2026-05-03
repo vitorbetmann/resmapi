@@ -4,7 +4,7 @@ import com.vitorbetmann.resmapi.dto.*;
 import com.vitorbetmann.resmapi.entities.Customer;
 import com.vitorbetmann.resmapi.entities.Owner;
 import com.vitorbetmann.resmapi.entities.User;
-import com.vitorbetmann.resmapi.exceptions.EmailAlreadyInUseException;
+import com.vitorbetmann.resmapi.exceptions.FieldAlreadyInUseException;
 import com.vitorbetmann.resmapi.exceptions.InvalidPasswordException;
 import com.vitorbetmann.resmapi.exceptions.InvalidUserTypeException;
 import com.vitorbetmann.resmapi.exceptions.UserNotFoundException;
@@ -38,7 +38,12 @@ public class UserService {
                 .get();
 
         if (this.userRepository.findByEmail(request.email()).isPresent()) {
-            throw new EmailAlreadyInUseException(request.email());
+            throw new FieldAlreadyInUseException("Email already in use: " + request.email());
+        }
+
+
+        if (this.userRepository.findByLogin(request.login()).isPresent()) {
+            throw new FieldAlreadyInUseException("Login already in use: " + request.login());
         }
 
         user.setName(request.name());
@@ -64,7 +69,11 @@ public class UserService {
                 .orElseThrow(() -> new UserNotFoundException(id.toString()));
 
         if (this.userRepository.findByEmailAndIdNot(request.email(), id).isPresent()) {
-            throw new EmailAlreadyInUseException(request.email());
+            throw new FieldAlreadyInUseException("Email already in use: " + request.email());
+        }
+
+        if (this.userRepository.findByLoginAndIdNot(request.login(), id).isPresent()) {
+            throw new FieldAlreadyInUseException("Login already in use: " + request.login());
         }
 
         user.setName(request.name());

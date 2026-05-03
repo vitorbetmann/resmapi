@@ -18,13 +18,13 @@ public class GlobalExceptionHandler {
         return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
     }
 
-    @ExceptionHandler(EmailAlreadyInUseException.class)
-    public ProblemDetail handleEmailAlreadyInUse(EmailAlreadyInUseException e) {
+    @ExceptionHandler(FieldAlreadyInUseException.class)
+    public ProblemDetail handleFieldAlreadyInUse(FieldAlreadyInUseException e) {
         return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, e.getMessage());
     }
 
     @ExceptionHandler(InvalidPasswordException.class)
-    public ProblemDetail handleEmailAlreadyInUse(InvalidPasswordException e) {
+    public ProblemDetail handleFieldAlreadyInUse(InvalidPasswordException e) {
         return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, e.getMessage());
     }
 }
