@@ -132,11 +132,16 @@ main class.
 
 A Postman collection in JSON format is included in the repository (`postman_collection.json`), covering:
 
+Alternatively, below is a link to access the collection directly in Postman:
+
+`https://vitorbetmann-5356326.postman.co/workspace/88c6f948-7512-4287-86ff-a0109b20c44c/collection/49832651-8d6986fc-d1d2-4980-ad1e-00915966295f?action=share&source=copy-link&creator=49832651`
+
 - Valid and invalid registration (duplicate email, missing required fields)
 - Successful and failing user data updates
 - Successful and failing password changes
 - Search users by name
 - Login validation (success and failure)
+- Deleting users by id
 
 ---
 
@@ -267,8 +272,13 @@ classe principal.
 
 A coleção em formato JSON está incluída no repositório (`postman_collection.json`) cobrindo:
 
+Alternativamente, segue abaixo um link para acessar a coleção diretamente em Postman:
+
+`https://vitorbetmann-5356326.postman.co/workspace/88c6f948-7512-4287-86ff-a0109b20c44c/collection/49832651-8d6986fc-d1d2-4980-ad1e-00915966295f?action=share&source=copy-link&creator=49832651`
+
 - Cadastro válido e inválido (e-mail duplicado, campos faltando)
 - Atualização de dados com sucesso e erro
 - Troca de senha com sucesso e erro
 - Busca de usuários pelo nome
 - Validação de login (sucesso e falha)
+- Deletar um usuário pelo id
