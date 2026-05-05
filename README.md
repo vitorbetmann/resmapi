@@ -130,11 +130,9 @@ main class.
 
 ## Postman collection
 
-A Postman collection in JSON format is included in the repository (`postman_collection.json`), covering:
+A Postman collection in JSON format is included in the repository in [Resmapi.postman_collection.json](Resmapi.postman_collection.json), covering:
 
-Alternatively, below is a link to access the collection directly in Postman:
-
-`https://vitorbetmann-5356326.postman.co/workspace/88c6f948-7512-4287-86ff-a0109b20c44c/collection/49832651-8d6986fc-d1d2-4980-ad1e-00915966295f?action=share&source=copy-link&creator=49832651`
+Alternatively, to access the collection directly in Postman, click [here](https://vitorbetmann-5356326.postman.co/workspace/88c6f948-7512-4287-86ff-a0109b20c44c/collection/49832651-8d6986fc-d1d2-4980-ad1e-00915966295f?action=share&source=copy-link&creator=49832651)
 
 - Valid and invalid registration (duplicate email, missing required fields)
 - Successful and failing user data updates
@@ -270,11 +268,9 @@ classe principal.
 
 ## Coleção Postman
 
-A coleção em formato JSON está incluída no repositório (`postman_collection.json`) cobrindo:
+A coleção em formato JSON está incluída no repositório em [Resmapi.postman_collection.json](Resmapi.postman_collection.json) cobrindo:
 
-Alternativamente, segue abaixo um link para acessar a coleção diretamente em Postman:
-
-`https://vitorbetmann-5356326.postman.co/workspace/88c6f948-7512-4287-86ff-a0109b20c44c/collection/49832651-8d6986fc-d1d2-4980-ad1e-00915966295f?action=share&source=copy-link&creator=49832651`
+Alternativamente, para acessar a coleção diretamente em Postman, clique [aqui](https://vitorbetmann-5356326.postman.co/workspace/88c6f948-7512-4287-86ff-a0109b20c44c/collection/49832651-8d6986fc-d1d2-4980-ad1e-00915966295f?action=share&source=copy-link&creator=49832651)
 
 - Cadastro válido e inválido (e-mail duplicado, campos faltando)
 - Atualização de dados com sucesso e erro
